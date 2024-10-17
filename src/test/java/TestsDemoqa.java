@@ -5,8 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
+
 public class TestsDemoqa {
     @BeforeAll
     static void beforeAll() {
@@ -20,6 +20,8 @@ public class TestsDemoqa {
     @Test
     void fillFormTest() {
         open("/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         $("#firstName").setValue("Vova");
         $("#lastName").setValue("letuchikh");
         $("#userEmail").setValue("Someemail@yandex.ru");
