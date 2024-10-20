@@ -9,12 +9,10 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class TestsDemoqa {
     @BeforeAll
-    static void beforeAll() {
+    static void setup() {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = false;
-        Configuration.timeout = 5000;
     }
 
     @Test
